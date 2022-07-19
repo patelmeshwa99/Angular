@@ -27,6 +27,8 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    // To avoid initializing each property: feature of lates TS version = 4.6.4
+    "strictPropertyInitialization": false
   }
 }
