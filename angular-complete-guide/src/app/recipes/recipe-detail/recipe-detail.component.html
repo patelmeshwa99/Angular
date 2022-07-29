@@ -10,10 +10,10 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <div class="btn-group" appDropdown>
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Manage Recipe</button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">To Shopping List</a></li>
+        <div class="btn-group" appDropdown #r="appDropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" id="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage Recipe</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdown" [ngClass]="{'show':r.isOpen}">
+                <li><a class="dropdown-item" href="#" (click)="onAddToShoppingList()">To Shopping List</a></li>
                 <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
                 <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
             </ul>
@@ -27,6 +27,10 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Ingredients
+        <ul class="list-group">
+            <ul class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient.name }} - {{ ingredient.amount }}
+            </ul>
+        </ul>
     </div>
 </div>
