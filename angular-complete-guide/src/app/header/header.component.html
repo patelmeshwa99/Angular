@@ -1,28 +1,38 @@
 <nav class="navbar navbar-expand-sm">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a href="#" class="navbar-brand">Recipe Book</a>
-      </div>
-  
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#" (click)="onSelectFeature('recipe')">Recipes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" (click)="onSelectFeature('shopping-list')">Shopping List</a>
-              </li>
-        </ul>
-        <ul class="navbar-nav ms-auto">
-          <li class="dropdown" appDropdown #r="appDropdown">
-            <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">Manage <span class="caret"></span></a>
-            <ul class="dropdown-menu" [ngClass]="{'show':r.isOpen}">
-              <li><a class="dropdown-item" href="#">Save Data</a></li>
-              <li><a class="dropdown-item" href="#">Fetch Data</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <a href="#" class="navbar-brand">Recipe Book</a>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="onSelectFeature('recipe')"
+            >Recipes</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            (click)="onSelectFeature('shopping-list')"
+            >Shopping List</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto" appDropdown #r="appDropdown">
+        <li class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            role="button"
+            >Manage <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu" [ngClass]="{'show':r.isOpen}">
+            <li><a href="#" class="dropdown-item">Save Data</a></li>
+            <li><a href="#" class="dropdown-item">Fetch Data</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
+  </div>
+</nav>
