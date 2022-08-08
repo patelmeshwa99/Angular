@@ -2,7 +2,15 @@
   <div class="container-fluid">
     <a href="#" class="navbar-brand">Recipe Book</a>
 
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarAdvanced" aria-controls="navbarAdvanced" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      type="button"
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarAdvanced"
+      aria-controls="navbarAdvanced"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -31,8 +39,22 @@
             >Manage <span class="caret"></span
           ></a>
           <ul class="dropdown-menu" [ngClass]="{ show: r.isOpen }">
-            <li><a style="cursor: pointer" class="dropdown-item">Save Data</a></li>
-            <li><a style="cursor: pointer" class="dropdown-item">Fetch Data</a></li>
+            <li>
+              <a
+                style="cursor: pointer"
+                class="dropdown-item"
+                (click)="onSaveData()"
+                >Save Data</a
+              >
+            </li>
+            <li>
+              <a
+                style="cursor: pointer"
+                class="dropdown-item"
+                (click)="onFetchData()"
+                >Fetch Data</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
